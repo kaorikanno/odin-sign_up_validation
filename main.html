@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="first-flex"> 
+            <!-- <img src="Adventure_Time_-_Title_card.png" alt="adventure time image" class="miImagen"> -->
+             <img src="adventure_time_gif.gif" alt="adventure time image" class="miImagen">
+            <div class="title-line">
+                <img src="Bee.webp" alt="bee image" class="bee">
+                <h1 class="title"> The B-page </h1>
+            </div>
+            <p class="photo-text">Image by Adventure Time Creators! </p>
+        </div>
+        <div class="border-flex">
+        <div class="second-flex">
+            <p class="subtitle"> This is not a real page! </p>
+            <p class="subsubtitle"> But welcome anyway adventurer </p>
+            <p class="order">   Sign-up:   </p>
+
+            <form>
+                <div class="first-line">
+                  <div class="inputs">
+                  <label for="first_name">First Name (3-16 ch):</label>
+                  <input type="text" id="first_name" placeholder="Finn" pattern="\w{3,16}" required>
+                  </div>
+                  <div class="inputs">
+                  <label for="last_name">Last Name (3-16 ch):</label>
+                  <input type="text" id="last_name" placeholder="Mertens" pattern="\w{3,16}" required>
+                  </div>
+                </div>
+                <div class="first-line">
+                  <div class="inputs">
+                  <label for="Phone">Phone Number:</label>
+                  <input type="text" id="Phone" placeholder="11111111"  pattern="(\d{8,8})" title="Put your cellphone number" required>
+                  </div>
+                  <div class="inputs">
+                  <label for="email">Last Name:</label>
+                  <input type="email" id="email" placeholder="adventure@time.bee" required>
+                  </div>
+                </div>
+                <div class="first-line">
+                  <div class="inputs">
+                  <label for="password">Password (min 8 ch):</label>
+                  <input type="password" id="password" placeholder="UpLow3num" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                  </div>
+                  <div class="inputs">
+                  <label for="cpassword">Confirm Password:</label>
+                  <input type="password" id="cpassword" placeholder="UpLow3num" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                  <span id="message"></span>
+                  </div>
+                </div>
+                <p class="terms"> By signing-up you are agreeing to our
+                    <a href="https://cdn.statically.io/gh/TheOdinProject/curriculum/afdbabfab03fbc34783c6b6f3920aba4a4d3b935/intermediate_html_css/forms/project_sign_up_form/imgs/sign-up-form.png"> Terms 
+                    and Conditions</a> jujuju</p>
+  <div class="button_continue">
+  <button type="submit" class="btn btn-primary"> Continue </button>
+  </div>
+  <p class="login"> Already have an account? <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form/project_submissions?direction=desc&sort=likes_count"> Login!</a> </p> 
+</form>
+
+<script>
+  const form = document.querySelector("form"); // selecciona tu form
+  const password = document.getElementById("password");
+  const cpassword = document.getElementById("cpassword");
+  const message = document.getElementById("message");
+  cpassword.after(message); // lo coloca justo después del campo de confirmación
+
+  // validar en tiempo real
+  cpassword.addEventListener("input", () => {
+    if (cpassword.value === password.value) {
+      message.textContent = "✅ Passwords match";
+      message.className = "success";
+    } else {
+      message.textContent = "❌ Passwords do not match";
+      message.className = "error";
+    }
+  });
+
+  // evitar enviar si no coinciden
+  form.addEventListener("submit", (e) => {
+    if (password.value !== cpassword.value) {
+      e.preventDefault();
+      alert("Passwords must match!");
+    }
+  });
+</script>
+
+    
+        </div>
+    </div>
+    </div>
+    
+
+    
+</body>
+</html>
